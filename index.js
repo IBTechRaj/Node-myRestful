@@ -13,7 +13,10 @@ var server = http.createServer(function (req, res) {
   var trimmedPath = path.replace(/^\/+|\/+$/g, '')
   res.end('Hello World\n')
 
-  console.log('Request received on path: ' + trimmedPath)
+  var method = req.method.toLowerCase()
+  console.log(
+    'Request received on path: ' + trimmedPath + ' method : ' + method
+  )
 })
 
 server.listen(4000, function () {
