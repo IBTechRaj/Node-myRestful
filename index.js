@@ -12,10 +12,11 @@ var server = http.createServer(function (req, res) {
   var path = parsedUrl.pathname
   var trimmedPath = path.replace(/^\/+|\/+$/g, '')
   res.end('Hello World\n')
-
+  var parseedQueryObj = parsedUrl.query
   var method = req.method.toLowerCase()
   console.log(
-    'Request received on path: ' + trimmedPath + ' method : ' + method
+    'Request received on path: ' + trimmedPath + ' method : ' + method + ' q ',
+    parseedQueryObj
   )
 })
 
